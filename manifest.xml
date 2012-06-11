@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest xmlns="http://www.elgg.org/plugin_manifest/1.8">
+	<name>GDocs File Previewer</name>
+	<author>Thomas Yung</author>
+	<version>1.02</version>
+	<description>This plugin lets users preview MS Office files (doc, docx, xls, xlsx, ppt, pptx), Apple iWork pages, Adobe eps, and zip files using the Google Docs File Viewer.</description>
+	<requires>
+		<type>elgg_release</type>
+		<version>1.8</version>
+	</requires>
+	<requires>
+		<name>file</name>
+		<type>plugin</type>
+	</requires>
+	<requires>
+		<type>priority</type>
+		<priority>after</priority>
+		<plugin>file</plugin>
+	</requires>
+</plugin_manifest>
