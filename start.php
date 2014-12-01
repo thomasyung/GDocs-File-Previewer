@@ -10,9 +10,8 @@ function gdocs_file_previewer_init() {
 }
 
 function expages_public_pages($hook, $type, $return_value, $params) {
-	$allowed_pages = array();
-	$allowed_pages[] = 'gdocspreview/*.*/*.*';
-	return $allowed_pages; 
+	$return_value[] = 'gdocspreview/*.*/*.*';
+	return $return_value; 
 }
 
 function page_handler_gdocs_preview($page) {
