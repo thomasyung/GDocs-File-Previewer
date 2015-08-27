@@ -100,3 +100,16 @@ echo elgg_view('input/dropdown',array(
 
 ?>
 </p>
+
+<p>
+	<b>File download url timeout</b>
+<?php
+	echo elgg_view('input/text', array(
+		'name' => 'params[timeout]',
+		'value' => $vars['entity']->timeout ? $vars['entity']->timeout : 180
+	));
+?>
+	<div class="elgg-subtext">
+		Enter a value in the number of seconds the link should be active after generation.  Default is 180 = 3 minutes
+	</div>
+</p>

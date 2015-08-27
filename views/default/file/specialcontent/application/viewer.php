@@ -1,7 +1,17 @@
 <?php
 
+if (!elgg_instanceof($vars['entity'])) {
+	return;
+}
+
 $date = new DateTime();
-$file_url = elgg_get_site_url() . "gdocspreview/{$vars['entity']->getGUID()}/{$date->format('U')}";
+$token = gdocs_file_previewer_get_token($vars['entity'], $date->format('U'));
+if (!$token) {
+	// something went wrong
+	return;
+}
+
+$file_url = elgg_get_site_url() . "gdocspreview/{$vars['entity']->getGUID()}/{$token}/{$date->format('U')}";
 
 	echo <<<HTML
 		<div class="file-photo">
@@ -10,5 +20,3 @@ $file_url = elgg_get_site_url() . "gdocspreview/{$vars['entity']->getGUID()}/{$d
 
 		</div>
 HTML;
-
-?>
